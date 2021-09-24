@@ -4,5 +4,15 @@
   "main": "app.js",
   "repository": "git@github.com:ReCoded-Org/curriculum-backend-hello-word-expressjs.git",
   "author": "Re:Coded",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start":"nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
 }
