@@ -1,6 +1,6 @@
-# Hello world Express.Js
-In this Lab we will create a hello world Express application where we utalize the usage of EJS view template engine. The objectives of this lesson are:
-1. Understanding how to use EJS with express
+# Hello World Express.Js
+In this lab we will create a "Hello World" Express application where we utalize the usage of EJS view template engine. The objectives of this lesson are:
+1. Understanding how to use EJS with Express
 2. Practicing GET and POST requests
 3. Understanding the difference between static and dynamic pages
 
@@ -8,9 +8,7 @@ In this Lab we will create a hello world Express application where we utalize th
 
 EJS (along with all the other competing template engines) allows you to generate full-blown HTML pages which certainly enables a "proper front-end".
 
-EJS is a tool for generating web pages that can include dynamic data and can share templated pieces with other web pages (such as common headers/footers). It is not a front-end framework. While EJS can be used by client-side Javascript to generate HTML on the client-side, it is more typically used by your back-end to generate web pages in response to some URL request. EJS is not a client-side framework like Angular or React and does not dictate what client-side framework you do or don't use (if any). It is mostly covers a separate solution space.
-
-Now looking at your app.js, u will find our first Node.js application that we wrote together, it's time to update this to an Express.js application!
+EJS is a tool for generating web pages that can include dynamic data and can share templated pieces with other web pages (such as common headers/footers). It is not a frontend framework. While EJS can be used by client-side Javascript to generate HTML on the client-side, it is more typically used by your backend to generate web pages in response to some URL request. EJS is not a client-side framework like Angular or React and does not dictate what client-side framework you do or don't use (if any). It is mostly covers a separate solution space.
 
 ## Installing necessary packages
 
@@ -24,7 +22,7 @@ As for the Nodemon packge: Nodemon is a utility that will monitor for any change
 
 ## Initializing our Express app
 
-Let's start with clearing our ```app.js``` and writing these lines of code.
+Let's start with writing these lines of code.
 ```
 const express = require("express");
 
@@ -81,13 +79,83 @@ Make sure to create a new directory in the root file and call it “views”.
 
 Inside the views directory we will start with the index.ejs page where we will render our memes.
 
->insert home page pjs code
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Meme Store</title>
+        <!-- Bootstrap icons-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Meme Store</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/add-meme">Add Meme</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Meme Store</h1>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <!-- This will be you Meme template that you will use to dynamically render all Memes -->
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Meme image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <!-- Meme details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Meme name-->
+                                    <h5 class="fw-bolder">Fancy Meme</h5>
+                                    <!-- Meme price-->
+                                    $40.00
+                                </div>
+                            </div>
+                            <!-- Meme actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Buy Meme</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        </footer>
+    </body>
+</html>
+```
 
 Now in our App.js lets render the EJS file we created for the index page.
 
-```
-app.
-get("/",(req,res,next) => {
+```js
+app.get("/",(req,res,next) => {
      res.render("index",{
          participants:participants
      })
@@ -95,32 +163,47 @@ get("/",(req,res,next) => {
 ```
 Let’s test this out!
 
-Now visiting localhost:3000, you should be Abe to see this:
+Now visiting localhost:3000, you should be able to see this:
 
->insert image for home page picture
+![homepage](/assets/homepage.png)
 
-Okay so far so good, next we need to create another page which includes a form that will allow users to add new memes,
-Lets start with creating the ejs file for the page
+## Practice Time
 
->insert ejs code for form
- 
-And in our app.js we will add the methods that will handle the requests and create an empty array to hold the memes data for us so every time a user fills the form we will be pushing to this array
-```
-const memes= []
+### Requirments
+1. Create a GET request that returns an EJS page that includes the form
+2. Create the form needed to add new Meme
+3. Handle POST request when the form is submited
+4. Show the current memes that you have on the homepage
 
-app.get("/add-memes-form",(req,res,next) => {
-     res.render("participantform”);
- })
+#### Part 0: GET `/add-memes`
+
+- First you will need to create a new EJS file in the views folder and name it `add-memes.ejs`
+for now we can have it empty
+- Then in `app.js` create a GET request which listens to `/add-memes` end point and it should respond with the EJS file you created
+
+#### Part 1: Creating the form
+
+Okay so far so good, we now have another page to for our form, not its time to build it
+
+- The form should have 3 fields, name,price and image link for the Meme.
+- After the user submits the form a POST request should be sent to `/memes`
 
 
-app.post(“/memes” ,(req,res,next) => {
-     const newMemeData = req.body;
-    memes.push(newMemeData);
-     res.redirect(“/“);
- })
-```
-Next step we will have to change our index.ejs to use our memes variable to show it in the home page.
+#### Part 2: POST `/memes`
 
->insert updated ejs code for index.ejs
+Now it's time to handle the POST request we will recive from the form
 
-EJS allows to write js code in order for our page to be dynamic and changes depending our specific variables.
+- Using the request body push a new Meme to our `memes` array
+- Redirect the user to our homepage `/`
+
+
+#### Part 3: Dynamic rendering
+
+We have all our Memes saved in the `memes` variable its time to send it with our index page
+- Read about [adding variables to EJS templates](https://ncoughlin.com/posts/express-ejs-render-page-dynamic-content/#adding-variables-to-ej) 
+- Using the example in the reading pass the `memes` variable to the template we have
+- Iterate over the `memes` array and for each meme use the HTML template you have to insert the data
+
+### Submission
+1. Run `npm install` on the terminal to install the packages required to run submission tests.
+2. Run `npm test` to verify your code before submission.
