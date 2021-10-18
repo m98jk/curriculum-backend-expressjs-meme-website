@@ -1,5 +1,5 @@
 # Hello World Express.Js
-In this lab we will create a "Hello World" Express application where we utalize the usage of EJS view template engine. The objectives of this lesson are:
+In this lab, we will create a "Hello World" Express application where we utilize the usage of the EJS view template engine. The objectives of this lesson are:
 1. Understanding how to use EJS with Express
 2. Practicing GET and POST requests
 3. Understanding the difference between static and dynamic pages
@@ -8,17 +8,17 @@ In this lab we will create a "Hello World" Express application where we utalize 
 
 EJS (along with all the other competing template engines) allows you to generate full-blown HTML pages which certainly enables a "proper front-end".
 
-EJS is a tool for generating web pages that can include dynamic data and can share templated pieces with other web pages (such as common headers/footers). It is not a frontend framework. While EJS can be used by client-side Javascript to generate HTML on the client-side, it is more typically used by your backend to generate web pages in response to some URL request. EJS is not a client-side framework like Angular or React and does not dictate what client-side framework you do or don't use (if any). It is mostly covers a separate solution space.
+EJS is a tool for generating web pages that can include dynamic data and can share templated pieces with other web pages (such as common headers/footers). It is not a frontend framework. While EJS can be used by client-side Javascript to generate HTML on the client-side, it is more typically used by your backend to generate web pages in response to some URL request. EJS is not a client-side framework like Angular or React and does not dictate what client-side framework you do or don't use (if any). It mostly covers a separate solution space.
 
 ## Installing necessary packages
 
-Looking at our package.json we will see that there's some packages already included here all we have to do is to run ```npm install``` in order to install the listed packages
+Looking at our package.json we will see that there are some packages already included here all we have to do is to run ```npm install```to install the listed packages
 
 the packages that we will use are as follows:
 Express.JS, EJS, and nodemon
 
 Until now we are familiar with what Express and EJS do. 
-As for the Nodemon packge: Nodemon is a utility that will monitor for any changes in your source and automatically restart your server.
+As for the Nodemon package: Nodemon is a utility that will monitor for any changes in your source and automatically restart your server.
 
 ## Initializing our Express app
 
@@ -33,21 +33,21 @@ Here we are importing our Express package, then we call it and assign it to our 
 
 Then we use the body-parser package which is already included with nodejs, It is responsible for parsing the incoming request bodies in a middleware before you handle it.
 
-Now we have to configure our app on which view engine and body parser it should use.
+Now we have to configure our app on which view engine and body-parser it should use.
 
 ```
 app.use(bodyParser.urlencoded({ extended:false }))
 app.set("view engine","ejs")
 app.set("views", "views")
 ```
-First two lines are self explanatory we are chosing the default bodyparser and view engine.
+The first two lines are self-explanatory we are choosing the default body-parser and view engine.
 
 As for the 3rd line ```app.set("view","views")```
 
 This will set your apps view folder to something like:
 >/Users/adil/Project/myApp/views
 
-When you actually go to use the `view`, the view name becomes the file path, minus the root directory and the file extension. For example, if you had the following file structure:
+When you go to use the `view`, the view name becomes the file path, minus the root directory and the file extension. For example, if you had the following file structure:
 
 ```
 /views/
@@ -65,7 +65,7 @@ res.render('news/index', {});
 res.render('news/article1', {});  
 res.render('news/article2', {});
 ```
-Then adding this line to listen for incoming requests at port 3000
+Then add this line to listen for incoming requests at port 3000
 ```
 app.listen(3000);
 ```
@@ -77,7 +77,7 @@ Let’s start with creating our EJS pages that we will render which each request
 
 Make sure to create a new directory in the root file and call it “views”.
 
-Inside the views directory we will start with the index.ejs page where we will render our memes.
+Inside the views directory, we will start with the index.ejs page where we will render our memes.
 
 ```html
 <!DOCTYPE html>
@@ -152,7 +152,7 @@ Inside the views directory we will start with the index.ejs page where we will r
 </html>
 ```
 
-Now in our App.js lets render the EJS file we created for the index page.
+Now in our App.js let us render the EJS file we created for the index page.
 
 ```js
 app.get("/",(req,res,next) => {
@@ -172,26 +172,26 @@ Now visiting localhost:3000, you should be able to see this:
 ### Requirments
 1. Create a GET request that returns an EJS page that includes the form
 2. Create the form needed to add new Meme
-3. Handle POST request when the form is submited
+3. Handle POST request when the form is submitted
 4. Show the current memes that you have on the homepage
 
 #### Part 0: GET `/add-memes`
 
-- First you will need to create a new EJS file in the views folder and name it `add-memes.ejs`
+- First, you will need to create a new EJS file in the views folder and name it `add-memes.ejs`
 for now we can have it empty
-- Then in `app.js` create a GET request which listens to `/add-memes` end point and it should respond with the EJS file you created
+- Then in `app.js` create a GET request which listens to the `/add-memes endpoint and it should respond with the EJS file you created
 
 #### Part 1: Creating the form
 
-Okay so far so good, we now have another page to for our form, not its time to build it
+Okay so far so good, we now have another page for our form, not time to build it
 
-- The form should have 3 fields, name,price and image link for the Meme.
+- The form should have 3 fields, name, price, and image link for the Meme.
 - After the user submits the form a POST request should be sent to `/memes`
 
 
 #### Part 2: POST `/memes`
 
-Now it's time to handle the POST request we will recive from the form
+Now it's time to handle the POST request we will receive from the form
 
 - Using the request body push a new Meme to our `memes` array
 - Redirect the user to our homepage `/`
@@ -206,4 +206,4 @@ We have all our Memes saved in the `memes` variable its time to send it with our
 
 ### Submission
 1. Run `npm install` on the terminal to install the packages required to run submission tests.
-2. Run `npm test` to verify your code before submission.
+2. Run `npm test` to verify your code before submitting it.
