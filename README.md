@@ -206,4 +206,11 @@ We have all our Memes saved in the `memes` variable its time to send it with our
 
 ### Submission
 1. Run `npm install` on the terminal to install the packages required to run submission tests.
-2. Run `npm test` to verify your code before submitting it.
+2. Run `npm test` to test your code. If it shows all tests have passed then you're good to go.
+
+Once you're ready to submit the assignment, follow these steps on your terminal:
+1. Stage your changes to be committed: `git add .`
+2. Commit your changes: `git commit -m "solve assignment"`
+3. Push your commit to the main branch of your assignment repo: `git push origin main`
+
+After your changes are pushed, return to this assignment on Canvas for the final step of submission.
