@@ -156,9 +156,7 @@ Now in our App.js let us render the EJS file we created for the index page.
 
 ```js
 app.get("/",(req,res,next) => {
-     res.render("index",{
-         participants:participants
-     })
+     res.render("index")
  })
 ```
 Let’s test this out!
