@@ -1,4 +1,4 @@
-# Hello World Express.Js
+# Express.js Meme Website
 In this lab, we will create a "Hello World" Express application where we utilize the usage of the EJS view template engine. The objectives of this lesson are:
 1. Understanding how to use EJS with Express
 2. Practicing GET and POST requests
@@ -12,7 +12,7 @@ EJS is a tool for generating web pages that can include dynamic data and can sha
 
 ## Installing necessary packages
 
-Looking at our package.json we will see that there are some packages already included here all we have to do is to run ```npm install```to install the listed packages
+Looking at our package.json we will see that there are some packages already included here all we have to do is to run `npm install`to install the listed packages
 
 the packages that we will use are as follows:
 Express.JS, EJS, and nodemon
