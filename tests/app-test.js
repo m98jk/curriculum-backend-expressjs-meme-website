@@ -10,10 +10,22 @@ describe('GET /', () => {
         .set('Accept', 'text/html')
         .expect('Content-Type', /html/)
         .expect(200, (err,res) => {
+            console.log(res)
             expect(res.text).to.include('Meme Store');
             done();
         });
     });
+
+    it('renders the first meme',(done) => {
+        request
+          .get('/')
+          .set('Accept','text/html')
+          .expect('Content-Type', /html/)
+          .expect(200, (err,res) => {
+              expect(res.text).to.include('meme#1');
+              done();
+          })
+    })
 });
 
 describe('GET /add-meme', () => {

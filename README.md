@@ -65,6 +65,16 @@ res.render('news/index', {});
 res.render('news/article1', {});  
 res.render('news/article2', {});
 ```
+Let's create our variable that we will have our memes in
+```js
+const Memes = [
+    {
+        name:"meme#1",
+        imgURL:"https://exse.eyewated.com/pict/c38cc4d7ef9a30de-1024x683.jpg",
+        genre:["comedy","movie"]
+    }
+]
+```
 Then add this line to listen for incoming requests at port 3000
 ```
 app.listen(3000);
