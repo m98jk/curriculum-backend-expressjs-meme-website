@@ -173,11 +173,11 @@ Now visiting localhost:3000, you should be able to see this:
 3. Handle POST request when the form is submitted
 4. Show the current memes that you have on the homepage
 
-#### Part 0: GET `/add-memes`
+#### Part 0: GET `/add-meme`
 
-- First, you will need to create a new EJS file in the views folder and name it `add-memes.ejs`
+- First, you will need to create a new EJS file in the views folder and name it `add-meme.ejs`
 for now we can have it empty
-- Then in `app.js` create a GET request which listens to the `/add-memes endpoint and it should respond with the EJS file you created
+- Then in `app.js` create a GET request which listens to the `/add-meme endpoint and it should respond with the EJS file you created
 
 #### Part 1: Creating the form
 
