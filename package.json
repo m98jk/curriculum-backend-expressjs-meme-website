@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "nodemon app.js",
-    "test": "mocha ./tests"
+    "test": "mocha --exit ./tests"
   },
   "devDependencies": {
     "chai": "^4.3.4",
