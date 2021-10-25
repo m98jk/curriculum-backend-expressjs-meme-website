@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participant Form</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form action="/memes" method="POST">
+        <label for="fullName">Full Name</label>
+        <input type="text" name="fullName" id="fullName">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <label for="hobby">Hobby</label>
+        <input type="hobby" name="hobby" id="hobby">
+        <label for="cars">Choose a car:</label>
+        <select id="cars" name="cars" size="4" multiple>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+          </select>
+        <input type="submit">
+    </form>
+</body>
+</html>
